@@ -9,8 +9,8 @@ namespace Solittare
 {
     internal class Card
     {
-        int id { get; }
-        coloros color { get; }
+        public int id { get; }
+        public coloros color { get; }
 
         public Card(int id)
         {

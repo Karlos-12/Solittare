@@ -19,9 +19,24 @@ namespace Solittare
     /// </summary>
     public partial class GameWindow : Window
     {
+        Game main = new Game();
         public GameWindow()
         {
             InitializeComponent();
+
+            Paint();
+        }
+
+        public void Paint()
+        {
+            for( int i = main.board.Count(); i > 0; i--)
+            {
+                for(int u = main.board[i -1].cards.Count(); u > 0; u--)
+                {
+                    string p1 = main.board[i - 1].cards[u - 1].color.ToString();
+                    string p2 = main.board[i - 1].cards[u - 1].id.ToString();
+                }
+            }
         }
     }
 }
