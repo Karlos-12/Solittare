@@ -27,7 +27,7 @@ namespace Solittare
 
         private void play_Click(object sender, RoutedEventArgs e)
         {
-            Game game = new Game();
+            GameWindow game = new GameWindow();
             game.Show();
             Close();
         }
@@ -35,6 +35,14 @@ namespace Solittare
         private void cslose(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Menu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                play_Click(sender, e);
+            }
         }
     }
 }

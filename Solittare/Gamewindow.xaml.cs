@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Solittare
 {
     /// <summary>
-    /// Interakční logika pro Game.xaml
+    /// Interakční logika pro GameWindow.xaml
     /// </summary>
-    public partial class Game : Window
+    public partial class GameWindow : Window
     {
-        public Game()
+        public GameWindow()
         {
             InitializeComponent();
         }
