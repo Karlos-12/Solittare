@@ -22,7 +22,7 @@ namespace Solittare
 
             for (int i = 4; i > 0; i--)
             {
-                for (int u = 14; u > 0; u--)
+                for (int u = 13; u > 0; u--)
                 {
                     cards.Add(new Card(u));
                 }

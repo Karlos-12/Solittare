@@ -33,19 +33,21 @@ namespace Solittare
             {
                 Image img = new Image();
 
-                int nm = 1;
+                int nm = 0;
+
                 for(int u = main.board[i -1].cards.Count(); u > 0; u--)
                 {
+                    img = new Image();
                     string p1 = main.board[i - 1].cards[u - 1].color.ToString();
                     string p2 = main.board[i - 1].cards[u - 1].id.ToString();
                     img.Source = new BitmapImage(new Uri("Resources/Cards/" + p1 + "/" + p2 + "n.png", UriKind.Relative));
                     img.VerticalAlignment = VerticalAlignment.Top;
                     img.HorizontalAlignment = HorizontalAlignment.Center;
-                    
+                    img.Height = 450;
 
                     Grid.SetColumn(img, i-1);
-                    Grid.SetRow(img, 0);
-                    img.Margin = new Thickness(5, nm * 15, 5, 0);
+                    
+                    img.Margin = new Thickness(5, nm * 90, 5, 0);
                     nm++;
 
                     deskoc.Children.Add(img);

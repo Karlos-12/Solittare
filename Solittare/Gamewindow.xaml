@@ -12,10 +12,6 @@
             <RowDefinition Height="621*"/>
         </Grid.RowDefinitions>
         <Grid x:Name="deskoc" Margin="0,0,80,80" Grid.RowSpan="2">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="2*"/>
-            </Grid.RowDefinitions>
             <Grid.Background>
                 <ImageBrush ImageSource="/Resources/Other/background.jpg" TileMode="FlipX" Opacity="0.9" Stretch="UniformToFill"/>
             </Grid.Background>
@@ -30,15 +26,6 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Border BorderThickness="1" Height="250" Margin="5,0,5,0" VerticalAlignment="Center" Background="#7F5C0080"/>
-            <Border x:Name="_0" BorderThickness="1" Height="250" Margin="5,0,5,0" VerticalAlignment="Center" Background="#7F5C0080" Grid.Column="1"/>
-            <Border x:Name="_1" BorderThickness="1" Height="250" Margin="5,0,5,0" VerticalAlignment="Center" Background="#7F5C0080" Grid.Column="2"/>
-            <Border x:Name="_2" BorderThickness="1" Height="250" Margin="5,0,5,0" VerticalAlignment="Center" Background="#7F5C0080" Grid.Column="3"/>
-            <Border x:Name="_3" BorderThickness="1" Height="250" Margin="5,0,5,0" VerticalAlignment="Center" Background="#7F5C0080" Grid.Column="4"/>
-            <Border x:Name="_4" BorderThickness="1" Height="250" Margin="5,0,5,0" VerticalAlignment="Center" Background="#7F5C0080" Grid.Column="5"/>
-            <Border x:Name="_5" BorderThickness="1" Height="250" Margin="5,0,5,0" VerticalAlignment="Center" Background="#7F5C0080" Grid.Column="6"/>
-            <Border x:Name="_6" BorderThickness="1" Height="250" Margin="5,0,5,0" VerticalAlignment="Center" Background="#7F5C0080" Grid.Column="7"/>
-            <Border x:Name="_7" BorderThickness="1" Height="250" Margin="5,0,5,0" VerticalAlignment="Center" Background="#7F5C0080" Grid.Column="8"/>
         </Grid>
         <Border x:Name="rest" BorderThickness="1" Margin="0,0,35,35" Background="#7F5C0080" HorizontalAlignment="Right" Width="159" Height="250" VerticalAlignment="Bottom" Grid.Row="1"/>
     </Grid>

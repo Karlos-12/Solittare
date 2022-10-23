@@ -15,12 +15,23 @@ namespace Solittare
         public Game()
         {
             pack = new Stack(true);
+            for (int i = 9; i > 0; i--)
+            {
+                board[i - 1] = new Stack();
+            }
 
+                deal();
+
+            deal();
+        }
+
+        public void deal()
+        {
             Random random = new Random();
 
-            for(int i = 9; i > 0; i--)
+            for (int i = 9; i > 0; i--)
             {
-                board[i-1] = new Stack();
+                
                 int u = random.Next(pack.cards.Count - 1);
                 board[i - 1].cards.Add(pack.cards[u]);
                 pack.cards.RemoveAt(u);
