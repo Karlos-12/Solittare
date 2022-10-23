@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Game" Height="900" Width="1600" Foreground="{x:Null}" Background="#FF1A1A1A" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
-        <Grid Margin="0,0,80,80">
+        <Grid x:Name="deskoc" Margin="0,0,80,80">
             <Grid.Background>
                 <ImageBrush ImageSource="/Resources/Other/background.jpg" TileMode="FlipX" Opacity="0.9" Stretch="UniformToFill"/>
             </Grid.Background>

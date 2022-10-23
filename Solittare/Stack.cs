@@ -12,7 +12,7 @@ namespace Solittare
 
         public Stack()
         {
-            cards = new List<Card>(null);
+            cards = new List<Card>();
         }
 
         public Stack(bool preset)

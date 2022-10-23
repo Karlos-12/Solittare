@@ -31,10 +31,20 @@ namespace Solittare
         {
             for( int i = main.board.Count(); i > 0; i--)
             {
+                Image img = new Image();
+
+                int nm = 1;
                 for(int u = main.board[i -1].cards.Count(); u > 0; u--)
                 {
                     string p1 = main.board[i - 1].cards[u - 1].color.ToString();
                     string p2 = main.board[i - 1].cards[u - 1].id.ToString();
+                    img.Source = new BitmapImage(new Uri("Resources/Cards/" + p1+"/"+p2+".png", UriKind.Relative));
+
+                    
+                    Grid.SetColumn(img, u-1);
+                    img.Margin = new Thickness(0, nm * 15, 0, 0);
+
+                    deskoc.Children.Add(img);
                 }
             }
         }

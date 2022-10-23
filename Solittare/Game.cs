@@ -20,8 +20,9 @@ namespace Solittare
 
             for(int i = 9; i > 0; i--)
             {
+                board[i-1] = new Stack();
                 int u = random.Next(pack.cards.Count - 1);
-                board[u - 1].cards.Add(pack.cards[u]);
+                board[i - 1].cards.Add(pack.cards[u]);
                 pack.cards.RemoveAt(u);
             }
         }

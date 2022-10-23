@@ -8,18 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Cards\red\1n.png" />
+    <None Remove="Resources\Cards\red\2n.png" />
     <None Remove="Resources\Other\background.jpg" />
     <None Remove="Resources\Other\istockphoto-1299608766-612x612.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\Cards\red\1n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\2n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Other\background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\Cards\" />
   </ItemGroup>
 
 </Project>
