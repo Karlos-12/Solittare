@@ -8,6 +8,22 @@ namespace Solittare
 {
     internal class Game
     {
-        Stack[] board = new Stack[9];
+        public Stack[] board = new Stack[9];
+
+        public Stack pack = new Stack();
+
+        public Game()
+        {
+            pack = new Stack(true);
+
+            Random random = new Random();
+
+            for(int i = 9; i > 0; i--)
+            {
+                int u = random.Next(pack.cards.Count - 1);
+                board[u - 1].cards.Add(pack.cards[u]);
+                pack.cards.RemoveAt(u);
+            }
+        }
     }
 }
