@@ -43,14 +43,13 @@ namespace Solittare
                     img.Source = new BitmapImage(new Uri("Resources/Cards/" + p1 + "/" + p2 + "n.png", UriKind.Relative));
                     img.VerticalAlignment = VerticalAlignment.Top;
                     img.HorizontalAlignment = HorizontalAlignment.Center;
+                    img.Margin = new Thickness(5, nm * 90, 5, 0);
                     img.Height = 450;
 
                     Grid.SetColumn(img, i-1);
-                    
-                    img.Margin = new Thickness(5, nm * 90, 5, 0);
-                    nm++;
-
                     deskoc.Children.Add(img);
+
+                    nm++;              
                 }
             }
         }

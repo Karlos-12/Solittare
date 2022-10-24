@@ -37,5 +37,33 @@ namespace Solittare
                 pack.cards.RemoveAt(u);
             }
         }
+
+        public bool passable(int stcakindx, Stack n)
+        {
+            for (int i = stcakindx; i < n.cards.Count(); i++)
+            {
+                if (n.cards[i].id -1 == n.cards[i+1].id)
+                {
+                    picked.Add(n.cards[i]);
+                }
+                else
+                {
+                    picked.Clear();
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+
+        public List<Card> picked;
+
+        public void move(Stack target)
+        {
+            if (picked[picked.Count - 1].id -1 == target.cards[0].id)
+            {
+                target.cards.InsertRange(0, picked);
+            }
+        }
     }
 }
