@@ -23,6 +23,7 @@ namespace Solittare
             deal();
             //nebude    
             deal();
+            deal();
         }
 
         public void deal()
@@ -41,30 +42,50 @@ namespace Solittare
         public bool passable(int stcakindx, Stack n)
         //zjištuje jestli to můžeš vůbec takhle vzít
         {
-            for (int i = stcakindx; i < n.cards.Count(); i++)
+            picked.Clear();
+            for (int i = 0; i <= stcakindx; i++)
             {
-                if (n.cards[i].id -1 == n.cards[i+1].id)
-                {
-                    picked.Add(n.cards[i]);
+                if(i != 0)
+                { 
+                    if (n.cards[i].id  == n.cards[i -1].id  +1)
+                    {
+                        picked.Add(n.cards[i]);
+                        lastpicked = n;
+                    }
+                    else
+                    {
+                        picked.Clear();
+                        return false;
+                    }
                 }
                 else
                 {
-                    picked.Clear();
-                    return false;
+                    picked.Add(n.cards[i]);
+                    lastpicked = n;
                 }
             }
             
             return true;
         }
 
-        public List<Card> picked;
+        Stack lastpicked;
+        public List<Card> picked = new List<Card>();
 
-        public void move(Stack target)
+        public bool move(Stack target)
         //zjištuje jestli to tam můžeš položit
         {
-            if (picked[picked.Count - 1].id -1 == target.cards[0].id)
+            if (picked[picked.Count - 1].id +1 == target.cards[0].id)
             {
                 target.cards.InsertRange(0, picked);
+                lastpicked.cards.RemoveRange(0, picked.Count());
+
+                picked.Clear();
+                return true;
+            }
+            else
+            {
+                picked.Clear();
+                return false;
             }
         }
     }

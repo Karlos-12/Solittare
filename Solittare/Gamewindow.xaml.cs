@@ -29,6 +29,8 @@ namespace Solittare
 
         public void Paint()
         {
+            deskoc.Children.Clear();
+
             for( int i = main.board.Count(); i > 0; i--)
             {
                 Image img = new Image();
@@ -41,17 +43,52 @@ namespace Solittare
                     string p1 = main.board[i - 1].cards[u - 1].color.ToString();
                     string p2 = main.board[i - 1].cards[u - 1].id.ToString();
                     img.Source = new BitmapImage(new Uri("Resources/Cards/" + p1 + "/" + p2 + "n.png", UriKind.Relative));
+                    img.MouseDown += new MouseButtonEventHandler(pickup);
+                    img.Drop += new DragEventHandler(dropec);
                     img.VerticalAlignment = VerticalAlignment.Top;
                     img.HorizontalAlignment = HorizontalAlignment.Center;
                     img.Margin = new Thickness(5, nm * 90, 5, 0);
                     img.Height = 450;
 
+                    int[] lol = new int[2] {u -1, i -1};
+                    img.Tag = lol;
+
                     Grid.SetColumn(img, i-1);
                     deskoc.Children.Add(img);
 
-                    nm++;              
+                    nm++;
+                    if(u == 1)
+                    {
+                        img.AllowDrop = true;
+                    }
                 }
             }
+        }
+
+        public void pickup(object sender, MouseEventArgs e)
+        {
+            Image l = sender as Image;
+            int[] lul = l.Tag as int[];
+            if(main.passable(lul[0], main.board[lul[1]]) == true)
+            {
+                Paint();
+                DragDrop.DoDragDrop(l, l, DragDropEffects.Move);
+                //MessageBox.Show("lu asi nějak to jede");
+            }
+
+
+            Paint();
+        }
+
+        public void dropec(object sender, DragEventArgs e)
+        {
+            Image spodek = sender as Image;
+            int[] lul = spodek.Tag as int[];
+
+
+            main.move(main.board[lul[1]]);
+
+            Paint();
         }
     }
 }
