@@ -20,7 +20,7 @@ namespace Solittare
             cards = new List<Card>();
             //karty more pudou od spodu ale je to asi irelevantní
 
-            for (int i = 4; i > 0; i--)
+            for (int i = 9; i > 0; i--)
             {
                 for (int u = 13; u > 0; u--)
                 {

@@ -90,5 +90,11 @@ namespace Solittare
 
             Paint();
         }
+
+        private void deal_Click(object sender, RoutedEventArgs e)
+        {
+            main.deal();
+            Paint();
+        }
     }
 }

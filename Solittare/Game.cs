@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Solittare
 {
@@ -32,10 +33,26 @@ namespace Solittare
 
             for (int i = 9; i > 0; i--)
             {
-                
-                int u = random.Next(pack.cards.Count - 1);
-                board[i - 1].cards.Add(pack.cards[u]);
-                pack.cards.RemoveAt(u);
+                int u = 0;
+                if (pack.cards.Count != 0)
+                {
+                    u = random.Next(pack.cards.Count - 1);
+
+                    if (board[i - 1].cards.Count() - 1 != -1)
+                    {
+                        board[i - 1].cards.Insert(0, pack.cards[u]);
+                    }
+                    else
+                    {
+                        board[i - 1].cards.Insert(0, pack.cards[u]);
+                    }
+                    pack.cards.RemoveAt(u);
+                }
+                else 
+                { 
+                    MessageBox.Show("No deal remainnig!");
+                    i = 0;
+                }               
             }
         }
 
@@ -64,8 +81,9 @@ namespace Solittare
                     lastpicked = n;
                 }
             }
-            
-            return true;
+            check();
+
+            return true;         
         }
 
         Stack lastpicked;
@@ -80,12 +98,44 @@ namespace Solittare
                 lastpicked.cards.RemoveRange(0, picked.Count());
 
                 picked.Clear();
+                check();
                 return true;
             }
             else
             {
                 picked.Clear();
+                check();
                 return false;
+            }
+            
+        }
+
+        public void check()
+        {
+            foreach(Stack stack in board)
+            {
+                int c = 1;
+                try
+                {
+                    foreach (Card card in stack.cards)
+                    {
+                        if (card.id == c)
+                        {
+                            c++;
+                            if (c == 14)
+                            {
+                                MessageBox.Show("lol!");
+                                stack.cards.RemoveRange(0, 13);
+                            }
+                        }
+                        else
+                        {
+                            c = 1;
+                        }
+                    }
+                }
+                catch
+                { }
             }
         }
     }

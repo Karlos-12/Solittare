@@ -29,5 +29,6 @@
             <Image Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="168" Margin="163,356,0,0" VerticalAlignment="Top" Width="165"/>
         </Grid>
         <Border x:Name="rest" BorderThickness="1" Margin="0,0,35,35" Background="#7F5C0080" HorizontalAlignment="Right" Width="159" Height="250" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <Button x:Name="deal" Content="Deal" HorizontalAlignment="Left" Height="75" Margin="36,546,0,0" Grid.Row="1" VerticalAlignment="Top" Width="155" Click="deal_Click"/>
     </Grid>
 </Window>
