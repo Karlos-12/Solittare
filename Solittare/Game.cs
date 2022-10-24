@@ -39,6 +39,7 @@ namespace Solittare
         }
 
         public bool passable(int stcakindx, Stack n)
+        //zjištuje jestli to můžeš vůbec takhle vzít
         {
             for (int i = stcakindx; i < n.cards.Count(); i++)
             {
@@ -59,6 +60,7 @@ namespace Solittare
         public List<Card> picked;
 
         public void move(Stack target)
+        //zjištuje jestli to tam můžeš položit
         {
             if (picked[picked.Count - 1].id -1 == target.cards[0].id)
             {
