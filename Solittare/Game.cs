@@ -20,8 +20,8 @@ namespace Solittare
                 board[i - 1] = new Stack();
             }
 
-                deal();
-
+            deal();
+            //nebude    
             deal();
         }
 
