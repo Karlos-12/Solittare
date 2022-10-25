@@ -52,6 +52,7 @@ namespace Solittare
                 { 
                     MessageBox.Show("No deal remainnig!");
                     i = 0;
+                    
                 }               
             }
         }
@@ -92,7 +93,16 @@ namespace Solittare
         public bool move(Stack target)
         //zjištuje jestli to tam můžeš položit
         {
-            if (picked[picked.Count - 1].id +1 == target.cards[0].id)
+            if(picked.Count - 1 == 0 || target.cards.Count == 0)
+            {
+                target.cards.InsertRange(0, picked);
+                lastpicked.cards.RemoveRange(0, picked.Count());
+
+                picked.Clear();
+                check();
+                return true;
+            }
+            else if (picked[picked.Count - 1].id +1 == target.cards[0].id)
             {
                 target.cards.InsertRange(0, picked);
                 lastpicked.cards.RemoveRange(0, picked.Count());
@@ -136,6 +146,24 @@ namespace Solittare
                 }
                 catch
                 { }
+            }
+
+            if(board.All(isprazdn) && pack.cards.Count == 0)
+            {
+                MessageBox.Show("You have won!");
+            }
+
+            
+        }
+        private bool isprazdn(Stack n)
+        {
+            if(n.cards.Count == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

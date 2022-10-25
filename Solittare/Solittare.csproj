@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Cards\blank.png" />
+    <None Remove="Resources\Cards\empty.png" />
     <None Remove="Resources\Cards\red\10n.png" />
     <None Remove="Resources\Cards\red\11n.png" />
     <None Remove="Resources\Cards\red\12n.png" />
@@ -26,6 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\Cards\blank.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\empty.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Cards\red\10n.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

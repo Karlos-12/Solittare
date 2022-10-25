@@ -37,29 +37,48 @@ namespace Solittare
 
                 int nm = 0;
 
-                for(int u = main.board[i -1].cards.Count(); u > 0; u--)
+                if (main.board[i - 1].cards.Count() == 0)
                 {
-                    img = new Image();
-                    string p1 = main.board[i - 1].cards[u - 1].color.ToString();
-                    string p2 = main.board[i - 1].cards[u - 1].id.ToString();
-                    img.Source = new BitmapImage(new Uri("Resources/Cards/" + p1 + "/" + p2 + "n.png", UriKind.Relative));
-                    img.MouseDown += new MouseButtonEventHandler(pickup);
-                    img.Drop += new DragEventHandler(dropec);
+                    img = new Image();                 
+                    img.AllowDrop = true;
+                    img.Source = new BitmapImage(new Uri("Resources/Cards/empty.png", UriKind.Relative));
                     img.VerticalAlignment = VerticalAlignment.Top;
                     img.HorizontalAlignment = HorizontalAlignment.Center;
-                    img.Margin = new Thickness(5, nm * 90, 5, 0);
+                    img.Margin = new Thickness(5, 0, 5, 0);
                     img.Height = 450;
+                    img.Tag = i-1;
 
-                    int[] lol = new int[2] {u -1, i -1};
-                    img.Tag = lol;
+                    img.Drop += new DragEventHandler(emptydrop);
 
-                    Grid.SetColumn(img, i-1);
+                    Grid.SetColumn(img, i - 1);
                     deskoc.Children.Add(img);
-
-                    nm++;
-                    if(u == 1)
+                }
+                else
+                {
+                    for (int u = main.board[i - 1].cards.Count(); u > 0; u--)
                     {
-                        img.AllowDrop = true;
+                        img = new Image();
+                        string p1 = main.board[i - 1].cards[u - 1].color.ToString();
+                        string p2 = main.board[i - 1].cards[u - 1].id.ToString();
+                        img.Source = new BitmapImage(new Uri("Resources/Cards/" + p1 + "/" + p2 + "n.png", UriKind.Relative));
+                        img.MouseDown += new MouseButtonEventHandler(pickup);
+                        img.Drop += new DragEventHandler(dropec);
+                        img.VerticalAlignment = VerticalAlignment.Top;
+                        img.HorizontalAlignment = HorizontalAlignment.Center;
+                        img.Margin = new Thickness(5, nm * 60, 5, 0);
+                        img.Height = 450;
+
+                        int[] lol = new int[2] { u - 1, i - 1 };
+                        img.Tag = lol;
+
+                        Grid.SetColumn(img, i - 1);
+                        deskoc.Children.Add(img);
+
+                        nm++;
+                        if (u == 1)
+                        {
+                            img.AllowDrop = true;
+                        }
                     }
                 }
             }
@@ -76,6 +95,15 @@ namespace Solittare
                 //MessageBox.Show("lu asi nějak to jede");
             }
 
+            Paint();
+        }
+
+        public void emptydrop(object sender, DragEventArgs e)
+        {
+            Image spodek = sender as Image;
+            int lul = (int)spodek.Tag;
+
+            main.move(main.board[lul]);
 
             Paint();
         }
@@ -93,8 +121,16 @@ namespace Solittare
 
         private void deal_Click(object sender, RoutedEventArgs e)
         {
-            main.deal();
-            Paint();
+            if(main.pack.cards.Count == 0)
+            {
+                deal.IsEnabled = false;
+                Paint();
+            }
+            else
+            {
+                main.deal();
+                Paint();
+            }
         }
     }
 }
