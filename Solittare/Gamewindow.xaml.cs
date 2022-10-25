@@ -21,6 +21,7 @@ namespace Solittare
     {
         Game main = new Game();
         public object poss;
+        MediaPlayer player = new MediaPlayer();
         public GameWindow()
         {
             InitializeComponent();
@@ -122,14 +123,17 @@ namespace Solittare
 
         private void deal_Click(object sender, RoutedEventArgs e)
         {
-            if(main.pack.cards.Count == 0)
+            player.Open(new Uri("Resources/SFX/shuffle.wav", UriKind.Relative));
+            if (main.pack.cards.Count == 0)
             {
                 deal.IsEnabled = false;
                 Paint();
             }
             else
             {
-                main.deal();
+                main.deal();               
+                player.Play();
+
                 Paint();
             }
         }
