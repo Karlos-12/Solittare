@@ -20,10 +20,11 @@ namespace Solittare
     public partial class GameWindow : Window
     {
         Game main = new Game();
+        public object poss;
         public GameWindow()
         {
             InitializeComponent();
-
+            poss = main;
             Paint();
         }
 
@@ -130,6 +131,15 @@ namespace Solittare
             {
                 main.deal();
                 Paint();
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.D)
+            {
+                Dev dev = new Dev(this);
+                dev.Show();
             }
         }
     }

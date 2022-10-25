@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Solittare"
         mc:Ignorable="d"
-        Title="Game" Height="900" Width="1600" Foreground="{x:Null}" Background="#FF1A1A1A" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Game" Height="900" Width="1600" Foreground="{x:Null}" Background="#FF1A1A1A" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowState="Maximized" KeyDown="Window_KeyDown">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -68,7 +68,7 @@
             <RowDefinition Height="263*"/>
             <RowDefinition Height="621*"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="deskoc" Margin="0,0,80,80" Grid.RowSpan="2">
+        <Grid x:Name="deskoc" Margin="0,0,80,0" Grid.RowSpan="2">
             <Grid.Background>
                 <ImageBrush ImageSource="/Resources/Other/background.jpg" TileMode="FlipX" Opacity="0.9" Stretch="UniformToFill"/>
             </Grid.Background>
@@ -85,7 +85,7 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="168" Margin="163,356,0,0" VerticalAlignment="Top" Width="165"/>
         </Grid>
-        <Button Style="{DynamicResource ButtonStyle1}" x:Name="deal" Content="" Margin="0,0,57,44" Grid.Row="1" Click="deal_Click" Height="250" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="180" BorderBrush="{x:Null}" Foreground="White" FontSize="24" FontWeight="Bold" FontFamily="Consolas">
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="deal" Content="" Margin="0,0,15,15" Grid.Row="1" Click="deal_Click" Height="200" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150" BorderBrush="{x:Null}" Foreground="White" FontSize="24" FontWeight="Bold" FontFamily="Consolas">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/Cards/blank.png"/>
             </Button.Background>
