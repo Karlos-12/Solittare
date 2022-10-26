@@ -153,6 +153,11 @@ namespace Solittare
                 Dev dev = new Dev(this);
                 dev.Show();
             }
-        }
+            if(e.Key == Key.Escape)
+            {
+                PMenu m = new PMenu(this);
+            }
+        }   
+
     }
 }
