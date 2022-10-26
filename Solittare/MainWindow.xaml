@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Solittare"
         mc:Ignorable="d"
-        Title="Menu" Height="450" Width="800" Foreground="{x:Null}" Background="#FF1A1A1A" KeyDown="Menu_KeyDown">
+        Title="Menu" Height="450" Width="800" Foreground="{x:Null}" Background="#FF1A1A1A" KeyDown="Menu_KeyDown" Icon="/1200px-Penrose-dreieck.svg.png">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">

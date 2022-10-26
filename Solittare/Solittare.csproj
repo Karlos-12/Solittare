@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="1200px-Penrose-dreieck.svg.png" />
     <None Remove="Resources\Cards\blank.png" />
     <None Remove="Resources\Cards\empty.png" />
     <None Remove="Resources\Cards\red\10n.png" />
@@ -80,6 +81,10 @@
     <Content Include="Resources\SFX\shuffle.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1200px-Penrose-dreieck.svg.png" />
   </ItemGroup>
 
 </Project>

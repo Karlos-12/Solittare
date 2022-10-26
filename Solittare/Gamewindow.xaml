@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Solittare"
         mc:Ignorable="d"
-        Title="Game" Height="900" Width="1600" Foreground="{x:Null}" Background="#FF1A1A1A" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowState="Maximized" KeyDown="Window_KeyDown">
+        Title="Game" Height="900" Width="1600" Foreground="{x:Null}" Background="#FF1A1A1A" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowState="Maximized" KeyDown="Window_KeyDown" Icon="/1200px-Penrose-dreieck.svg.png">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">

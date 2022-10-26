@@ -62,7 +62,15 @@ namespace Solittare
                         img = new Image();
                         string p1 = main.board[i - 1].cards[u - 1].color.ToString();
                         string p2 = main.board[i - 1].cards[u - 1].id.ToString();
-                        img.Source = new BitmapImage(new Uri("Resources/Cards/" + p1 + "/" + p2 + "n.png", UriKind.Relative));
+                        if(main.board[i - 1].cards[u -1].isHiden == true)
+                        {
+                            img.Source = new BitmapImage(new Uri("Resources/Cards/blank.png", UriKind.Relative));
+                        }
+                        else
+                        {
+                            img.Source = new BitmapImage(new Uri("Resources/Cards/" + p1 + "/" + p2 + "n.png", UriKind.Relative));
+                        }
+
                         img.MouseDown += new MouseButtonEventHandler(pickup);
                         img.Drop += new DragEventHandler(dropec);
                         img.VerticalAlignment = VerticalAlignment.Top;

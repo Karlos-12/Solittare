@@ -21,13 +21,14 @@ namespace Solittare
                 board[i - 1] = new Stack();
             }
 
-            deal();
+            deal(false);
             //nebude    
-            deal();
-            deal();
+            deal(false);
+            deal(false);
+            check();
         }
 
-        public void deal()
+        public void deal(bool nonfirst = true)
         {
             Random random = new Random();
 
@@ -53,7 +54,12 @@ namespace Solittare
                     MessageBox.Show("No deal remainnig!");
                     i = 0;
                     
-                }               
+                }
+                
+                if(nonfirst == true)
+                {
+                    check();
+                }
             }
         }
 
@@ -124,7 +130,13 @@ namespace Solittare
         {
             foreach(Stack stack in board)
             {
+                if(stack.cards.Count != 0)
+                {
+                    stack.cards[0].isHiden = false;
+                }
+
                 int c = 1;
+
                 try
                 {
                     foreach (Card card in stack.cards)
