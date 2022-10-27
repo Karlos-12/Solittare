@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -42,17 +43,26 @@ namespace Solittare
         {
             if(e.Key == Key.Enter)
             {
-                play_Click(sender, e);
+                if (exp.IsExpanded == true)
+                {
+                    login(sender, e);
+                }
+                else
+                {
+                    play_Click(sender, e);
+                }
             }
         }
 
-        private void login(object sender, RoutedEventArgs e)
+        public async void login(object sender, RoutedEventArgs e)
         {
             var xd = new Onlinemodule(nambox.Text, passbox.Text);
             if(xd.logged == true)
             {
                 log = xd;
                 img.Source = new BitmapImage(new Uri(log.img, UriKind.Absolute));
+                await Task.Delay(1000);
+                exp.IsExpanded = false;            
             }
 
         }

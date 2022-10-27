@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Solittare"
         mc:Ignorable="d"
-        Title="Pause Menu" Height="450" Width="800" Icon="/1200px-Penrose-dreieck.svg.png" Background="#FF2E2E2E" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
+        Title="Pause Menu" Height="450" Width="800" Icon="/1200px-Penrose-dreieck.svg.png" Background="#FF2E2E2E" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown" Closed="Window_Closed">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">

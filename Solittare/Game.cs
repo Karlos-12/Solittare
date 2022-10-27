@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.Pkcs;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace Solittare
 {
@@ -14,6 +16,11 @@ namespace Solittare
         public Stack pack = new Stack();
 
         Onlinemodule onlines;
+
+        public int time = 0;
+
+        DispatcherTimer timer = new DispatcherTimer();
+        //focus ne focus sto start času
         public void online(Onlinemodule m)
         {
             onlines = m;
@@ -32,6 +39,11 @@ namespace Solittare
             deal(false);
             deal(false);
             check();
+
+            timer.Interval = new TimeSpan(0,0,1);
+            timer.Tick += new EventHandler(dispatch);
+
+            timer.Start();
         }
 
         public void deal(bool nonfirst = true)
@@ -187,9 +199,36 @@ namespace Solittare
 
         public void Win()
         {
+            timer.Stop();
             MessageBox.Show("You have won!");
-            onlines.addwin();
+            onlines.gamewrite(true, time);
         }
 
+        public void dispatch(object sender, EventArgs e)
+        {
+            time++;
+        }
+
+        public void timechange()
+        {
+            if(timer.IsEnabled)
+            {
+                timer.Stop();
+            }
+            else
+            {
+                timer.Start();
+            }
+        }
+
+        public void Lose()
+        {
+            timer.Stop();
+            if(onlines != null)
+            {
+                onlines.gamewrite(false, time);
+            }
+        }
     }
+    
 }

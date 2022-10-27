@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Solittare
 {
@@ -24,11 +26,13 @@ namespace Solittare
         public object line;
         public object poss;
         MediaPlayer player = new MediaPlayer();
+
         public GameWindow()
         {
             InitializeComponent();
             poss = main;
             Paint();
+            setupdis();
         }
 
         public GameWindow(object o)
@@ -39,6 +43,7 @@ namespace Solittare
             online = o as Onlinemodule;
             line = online;
             main.online(online);
+            setupdis();
         }
 
         public void Paint()
@@ -170,7 +175,25 @@ namespace Solittare
                 PMenu m = new PMenu(this);
                 m.Show();
             }
-        }   
+        }
 
+        private void tmchng(object sender, EventArgs e)
+        {      
+            tm.Content = main.time + "sec";
+        }
+
+        DispatcherTimer t = new DispatcherTimer();
+
+        private void setupdis()
+        {
+            t.Interval = new TimeSpan(0,0,1);
+            t.Tick += new EventHandler(tmchng);
+            t.Start();
+        }
+
+        private void Window_Closed(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            main.Lose();
+        }
     }
 }

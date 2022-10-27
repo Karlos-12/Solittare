@@ -38,6 +38,7 @@ namespace Solittare
             }
             catch
             { MessageBox.Show("No, něco se dojebalo..."); }
+            (gameWindow.poss as Game).timechange();
         }
 
         private void play_Click(object sender, RoutedEventArgs e)
@@ -50,6 +51,7 @@ namespace Solittare
             gameWindow.Close();
             MainWindow m = new MainWindow();
             m.Show();
+            m.login(sender, e);
             Close();
         }
 
@@ -65,6 +67,11 @@ namespace Solittare
             {
                 Close();
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            (gameWindow.poss as Game).timechange();
         }
     }
 }

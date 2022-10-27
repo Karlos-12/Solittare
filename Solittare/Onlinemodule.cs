@@ -57,9 +57,20 @@ namespace Solittare
             return (client.Get(username + "/wins").ResultAs<int>());
         }
 
-        public void addwin()
+        public void gamewrite(bool won, int time)
         {
-            client.Set(username + "/wins", client.Get(username + "/wins").ResultAs<int>() +1);
+            if(won == true)
+            {
+                client.Set(username + "/wins", client.Get(username + "/wins").ResultAs<int>() + 1); 
+                if(time < client.Get(username + "/best_time").ResultAs<int>())
+                {
+                    client.Set(username + "/best_time", time);
+                }
+            }
+
+            client.Set(username + "/played", client.Get(username + "/played").ResultAs<int>() + 1);
+            client.Set(username + "/winstat", ((client.Get(username + "/wins").ResultAs<int>()) / (client.Get(username + "/played").ResultAs<int>() / 100)));
+        
         }
 
     }
