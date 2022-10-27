@@ -38,6 +38,7 @@ namespace Solittare
             Paint();
             online = o as Onlinemodule;
             line = online;
+            main.online(online);
         }
 
         public void Paint()

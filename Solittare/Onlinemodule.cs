@@ -52,5 +52,15 @@ namespace Solittare
             }
         }
 
+        public int getwins()
+        {
+            return (client.Get(username + "/wins").ResultAs<int>());
+        }
+
+        public void addwin()
+        {
+            client.Set(username + "/wins", client.Get(username + "/wins").ResultAs<int>() +1);
+        }
+
     }
 }

@@ -8,6 +8,7 @@
         Title="Dev" Height="450" Width="800" Foreground="{x:Null}" Background="#FF2F2F2F">
     <Grid>
         <Button x:Name="cl" Content="Clear all" HorizontalAlignment="Left" Height="60" Margin="45,65,0,0" VerticalAlignment="Top" Width="102" Click="cl_Click"/>
+        <Button x:Name="cl_Copy" Content="Add win" HorizontalAlignment="Left" Height="60" Margin="243,108,0,0" VerticalAlignment="Top" Width="102" Click="addwin"/>
 
     </Grid>
 </Window>

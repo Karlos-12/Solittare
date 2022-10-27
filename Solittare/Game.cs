@@ -13,6 +13,12 @@ namespace Solittare
 
         public Stack pack = new Stack();
 
+        Onlinemodule onlines;
+        public void online(Onlinemodule m)
+        {
+            onlines = m;
+        }
+
         public Game()
         {
             pack = new Stack(true);
@@ -162,7 +168,7 @@ namespace Solittare
 
             if(board.All(isprazdn) && pack.cards.Count == 0)
             {
-                MessageBox.Show("You have won!");
+                Win();
             }
 
             
@@ -178,5 +184,12 @@ namespace Solittare
                 return false;
             }
         }
+
+        public void Win()
+        {
+            MessageBox.Show("You have won!");
+            onlines.addwin();
+        }
+
     }
 }

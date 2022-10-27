@@ -75,8 +75,8 @@
             <Button Style="{DynamicResource ButtonStyle1}" x:Name="resum" Content="Resume" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="play_Click"/>
         </Grid>
         <Image x:Name="img" Grid.Column="1" Height="240" Margin="70,42,70,0" VerticalAlignment="Top" Source="/1200px-Penrose-dreieck.svg.png"/>
-        <Label Grid.Column="1" Content="Name" Margin="60,0,60,85" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Consolas" FontSize="24" HorizontalContentAlignment="Center" Height="38" VerticalAlignment="Bottom"/>
-        <Label Grid.Column="1" Content="Wined games: 0" Margin="60,0,60,42" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Consolas" FontSize="24" HorizontalContentAlignment="Center" Height="38" VerticalAlignment="Bottom"/>
+        <Label x:Name="nam" Grid.Column="1" Content="Name" Margin="60,0,60,85" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Consolas" FontSize="24" HorizontalContentAlignment="Center" Height="38" VerticalAlignment="Bottom"/>
+        <Label x:Name="wins" Grid.Column="1" Content="Wined games: 0" Margin="60,0,60,42" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Consolas" FontSize="24" HorizontalContentAlignment="Center" Height="38" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>

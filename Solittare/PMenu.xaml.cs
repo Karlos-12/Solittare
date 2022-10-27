@@ -26,14 +26,18 @@ namespace Solittare
             InitializeComponent();
 
             try
-            {
-                if ((g.line as Onlinemodule).img != null && (g.line as Onlinemodule).img != "")
+            {   if (g.line as Onlinemodule != null)
                 {
-                    img.Source = new BitmapImage(new Uri((g.line as Onlinemodule).img, UriKind.Absolute));
+                    if ((g.line as Onlinemodule).img != null && (g.line as Onlinemodule).img != "")
+                    {
+                        img.Source = new BitmapImage(new Uri((g.line as Onlinemodule).img, UriKind.Absolute));
+                        nam.Content = (g.line as Onlinemodule).username;
+                        wins.Content = "Wins: " + (g.line as Onlinemodule).getwins();
+                    }
                 }
             }
             catch
-            { }
+            { MessageBox.Show("No, něco se dojebalo..."); }
         }
 
         private void play_Click(object sender, RoutedEventArgs e)

@@ -37,5 +37,10 @@ namespace Solittare
             main.Paint();
             game.check();
         }
+
+        private void addwin(object sender, RoutedEventArgs e)
+        {
+            game.Win();
+        }
     }
 }
