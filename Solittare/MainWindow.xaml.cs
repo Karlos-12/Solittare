@@ -52,6 +52,7 @@ namespace Solittare
             if(xd.logged == true)
             {
                 log = xd;
+                img.Source = new BitmapImage(new Uri(log.img, UriKind.Absolute));
             }
 
         }
@@ -72,6 +73,11 @@ namespace Solittare
             {
                 t.Text = "";
             }
+        }
+
+        private void setngs(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("možná jednou bratře...");
         }
     }
 }

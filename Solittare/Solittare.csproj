@@ -26,6 +26,7 @@
     <None Remove="Resources\Cards\red\9n.png" />
     <None Remove="Resources\Other\background.jpg" />
     <None Remove="Resources\Other\istockphoto-1299608766-612x612.jpg" />
+    <None Remove="Resources\Other\seticon.png" />
     <None Remove="Resources\SFX\shuffle.wav" />
   </ItemGroup>
 
@@ -76,6 +77,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Other\background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Other\seticon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\SFX\shuffle.wav">
