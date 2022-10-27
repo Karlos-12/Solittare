@@ -46,38 +46,57 @@ namespace Solittare
             timer.Start();
         }
 
+        private bool ccc(Stack s)
+        {
+            if(s.cards.Count() == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public void deal(bool nonfirst = true)
         {
-            Random random = new Random();
-
-            for (int i = 9; i > 0; i--)
+            if (board.All(ccc) || nonfirst == false)
             {
-                int u = 0;
-                if (pack.cards.Count != 0)
-                {
-                    u = random.Next(pack.cards.Count - 1);
+                Random random = new Random();
 
-                    if (board[i - 1].cards.Count() - 1 != -1)
+                for (int i = 9; i > 0; i--)
+                {
+                    int u = 0;
+                    if (pack.cards.Count != 0)
                     {
-                        board[i - 1].cards.Insert(0, pack.cards[u]);
+                        u = random.Next(pack.cards.Count - 1);
+
+                        if (board[i - 1].cards.Count() - 1 != -1)
+                        {
+                            board[i - 1].cards.Insert(0, pack.cards[u]);
+                        }
+                        else
+                        {
+                            board[i - 1].cards.Insert(0, pack.cards[u]);
+                        }
+                        pack.cards.RemoveAt(u);
                     }
                     else
                     {
-                        board[i - 1].cards.Insert(0, pack.cards[u]);
+                        MessageBox.Show("No deal remainnig!");
+                        i = 0;
+
                     }
-                    pack.cards.RemoveAt(u);
+
+                    if (nonfirst == true)
+                    {
+                        check();
+                    }
                 }
-                else 
-                { 
-                    MessageBox.Show("No deal remainnig!");
-                    i = 0;
-                    
-                }
-                
-                if(nonfirst == true)
-                {
-                    check();
-                }
+            }
+            else
+            {
+                MessageBox.Show("Máš tam volne mista brácho");
             }
         }
 
@@ -117,7 +136,7 @@ namespace Solittare
         public bool move(Stack target)
         //zjištuje jestli to tam můžeš položit
         {
-            if(picked.Count - 1 == 0 || target.cards.Count == 0)
+            if(target.cards.Count == 0)
             {
                 target.cards.InsertRange(0, picked);
                 lastpicked.cards.RemoveRange(0, picked.Count());
@@ -201,7 +220,10 @@ namespace Solittare
         {
             timer.Stop();
             MessageBox.Show("You have won!");
-            onlines.gamewrite(true, time);
+            if (onlines != null)
+            {
+                onlines.gamewrite(true, time);
+            }
         }
 
         public void dispatch(object sender, EventArgs e)
