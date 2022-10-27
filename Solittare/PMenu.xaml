@@ -5,13 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Solittare"
         mc:Ignorable="d"
-        Title="Pause Menu" Height="450" Width="800" Icon="/1200px-Penrose-dreieck.svg.png">
+        Title="Pause Menu" Height="450" Width="800" Icon="/1200px-Penrose-dreieck.svg.png" Background="#FF2E2E2E" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFA2A2A2"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF6037AD"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FF4D4D4D"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF3C2071"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Background="#FF1A1A1A">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="ng" Content="New game" HorizontalAlignment="Center" Height="60" Margin="0,108,0,0" VerticalAlignment="Top" Width="236"/>
+        <Rectangle Grid.Column="1" Margin="0,42,0,42" HorizontalAlignment="Center" Width="280" Fill="#FF2E2E2E"/>
+        <Grid HorizontalAlignment="Center" Margin="0,54,0,30" Width="280">
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="qut" Content="Quit" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Margin="0,222,0,0" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="qt"/>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="newg" Content="New game" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="ng" Margin="0,110,0,0"/>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="resum" Content="Resume" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="play_Click"/>
+        </Grid>
+        <Image x:Name="img" Grid.Column="1" Height="240" Margin="70,42,70,0" VerticalAlignment="Top" Source="/1200px-Penrose-dreieck.svg.png"/>
+        <Label Grid.Column="1" Content="Name" Margin="60,0,60,85" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Consolas" FontSize="24" HorizontalContentAlignment="Center" Height="38" VerticalAlignment="Bottom"/>
+        <Label Grid.Column="1" Content="Wined games: 0" Margin="60,0,60,42" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Consolas" FontSize="24" HorizontalContentAlignment="Center" Height="38" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>

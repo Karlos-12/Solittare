@@ -20,6 +20,8 @@ namespace Solittare
     public partial class GameWindow : Window
     {
         Game main = new Game();
+        Onlinemodule online;
+        public object line;
         public object poss;
         MediaPlayer player = new MediaPlayer();
         public GameWindow()
@@ -27,6 +29,15 @@ namespace Solittare
             InitializeComponent();
             poss = main;
             Paint();
+        }
+
+        public GameWindow(object o)
+        {
+            InitializeComponent();
+            poss = main;
+            Paint();
+            online = o as Onlinemodule;
+            line = online;
         }
 
         public void Paint()
@@ -156,6 +167,7 @@ namespace Solittare
             if(e.Key == Key.Escape)
             {
                 PMenu m = new PMenu(this);
+                m.Show();
             }
         }   
 

@@ -84,6 +84,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FireSharp" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="1200px-Penrose-dreieck.svg.png" />
   </ItemGroup>
 

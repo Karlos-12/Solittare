@@ -20,6 +20,7 @@ namespace Solittare
     /// </summary>
     public partial class MainWindow : Window
     {
+        Onlinemodule log;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Solittare
 
         private void play_Click(object sender, RoutedEventArgs e)
         {
-            GameWindow game = new GameWindow();
+            GameWindow game = new GameWindow(log);
             game.Show();
             Close();
         }
@@ -42,6 +43,34 @@ namespace Solittare
             if(e.Key == Key.Enter)
             {
                 play_Click(sender, e);
+            }
+        }
+
+        private void login(object sender, RoutedEventArgs e)
+        {
+            var xd = new Onlinemodule(nambox.Text, passbox.Text);
+            if(xd.logged == true)
+            {
+                log = xd;
+            }
+
+        }
+
+        private void lf(object sender, RoutedEventArgs e)
+        {
+            TextBox t = sender as TextBox;
+            if(t.Text == "")
+            {
+                t.Text = t.Tag as string;
+            }
+        }
+
+        private void gf(object sender, RoutedEventArgs e)
+        {
+            TextBox t = sender as TextBox;
+            if(t.Text == t.Tag.ToString())
+            {
+                t.Text = "";
             }
         }
     }

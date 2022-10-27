@@ -24,6 +24,43 @@ namespace Solittare
         {
             gameWindow = g;
             InitializeComponent();
+
+            try
+            {
+                if ((g.line as Onlinemodule).img != null && (g.line as Onlinemodule).img != "")
+                {
+                    img.Source = new BitmapImage(new Uri((g.line as Onlinemodule).img, UriKind.Absolute));
+                }
+            }
+            catch
+            { }
+        }
+
+        private void play_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void ng(object sender, RoutedEventArgs e)
+        {
+            gameWindow.Close();
+            MainWindow m = new MainWindow();
+            m.Show();
+            Close();
+        }
+
+        private void qt(object sender, RoutedEventArgs e)
+        {
+            gameWindow.Close();
+            Close();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Escape)
+            {
+                Close();
+            }
         }
     }
 }
