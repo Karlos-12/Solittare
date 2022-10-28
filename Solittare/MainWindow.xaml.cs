@@ -90,5 +90,11 @@ namespace Solittare
             Setings setings = new Setings(log);
             setings.Show();
         }
+
+        private async void rege(object sender, RoutedEventArgs e)
+        {
+            regwindow regwindow = new regwindow(this);
+            regwindow.Show();
+        }
     }
 }

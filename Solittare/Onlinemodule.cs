@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Firebase.Storage;
 using FireSharp;
 using FireSharp.Config;
 using FireSharp.Interfaces;
+using Firebase.Auth;
+using System.Net.Sockets;
+using System.Threading;
 
 namespace Solittare
 {
@@ -18,7 +23,7 @@ namespace Solittare
 
         public string img { get; set; }
 
-        IFirebaseConfig config = new FirebaseConfig
+        IFirebaseConfig config = new FireSharp.Config.FirebaseConfig
         {
             BasePath = "https://solitare-56915-default-rtdb.europe-west1.firebasedatabase.app/users/",
             AuthSecret = "zQmSN9g7qKvJBWnI4Gx4QjQBPaSoWdlEKFH0BA8G"
@@ -95,5 +100,45 @@ namespace Solittare
             client.Set(username + "/best_time", 1000);
         }
 
+        public async void newacount(string name, string passw, string imuges = @"D:\testfolder\1200px-Penrose-dreieck.svg.png")
+        {
+            FileStream stream = null;
+            try
+            {
+                stream = File.Open(imuges, FileMode.Open);
+            }
+            catch
+            {
+                MessageBox.Show("The file is unaccesable");
+            }
+
+            var auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig("AIzaSyCETk5LvYzOqb2yfVmTsq3K6O2cHOnSeYE"));
+            var a = await auth.SignInWithEmailAndPasswordAsync("admi@more.com", "123456");
+
+            string pic = "";
+            
+                var task = new FirebaseStorage(
+                    "solitare-56915.appspot.com",
+                    new FirebaseStorageOptions
+                    {
+                        AuthTokenAsyncFactory = () => Task.FromResult(a.FirebaseToken),
+                        ThrowOnCancel = true
+                    })
+                    .Child(name + ".png")
+                    .PutAsync(stream);
+
+                pic = await task;
+            
+
+            client.Set(name + "/name", name);
+            client.Set(name + "/pass", passw);
+
+            client.Set(name + "/img", pic);
+
+            client.Set(name + "/best_time", 1000);
+            client.Set(name + "/played", 0);
+            client.Set(name + "/wins", 0);
+            client.Set(name + "/winstat", 100);
+        }
     }
 }

@@ -42,5 +42,10 @@ namespace Solittare
         {
             game.Win();
         }
+
+        private void upload(object sender, RoutedEventArgs e)
+        {
+            (main.line as Onlinemodule).newacount("lol", "123");
+        }
     }
 }

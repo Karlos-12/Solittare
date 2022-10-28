@@ -38,7 +38,7 @@ namespace Solittare
         {
             try
             {
-                Process.Start("https://www.wikihow.com/Play-Solitaire");
+                Process.Start("explorer", "https://www.wikihow.com/Play-Solitaire");
             }
             catch
             {
@@ -55,7 +55,7 @@ namespace Solittare
         {
             try
             {
-                Process.Start("https://github.com/Karlos-12/Solittare");
+                Process.Start("explorer", "https://github.com/Karlos-12/Solittare");
             }
             catch
             {
