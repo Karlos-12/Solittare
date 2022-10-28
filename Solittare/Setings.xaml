@@ -6,8 +6,15 @@
         xmlns:local="clr-namespace:Solittare"
         mc:Ignorable="d"
         Title="Setings" Height="900" Width="450" Foreground="{x:Null}" Background="#FF1A1A1A">
-    <Grid>
-        <Label Content="Made by Karlos_12" HorizontalAlignment="Center" Margin="0,0,0,40" Width="240" Background="{x:Null}" Foreground="White" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Bottom"/>
+    <Grid Height="884" VerticalAlignment="Bottom">
+        <Label Content="Made by Karlos_12" HorizontalAlignment="Center" Margin="0,0,0,30" Width="240" Background="{x:Null}" Foreground="White" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Bottom"/>
+        <Rectangle HorizontalAlignment="Center" Height="402" Margin="0,40,0,0" VerticalAlignment="Top" Width="358" Fill="#FF2E2E2E"/>
+        <Image Height="302" Margin="64,40,64,0" VerticalAlignment="Top" Source="https://wordpresscdn.winzogames.com/prod/blog/wp-content/uploads/2022/05/18110104/Solitaire-2.jpg" Stretch="UniformToFill"/>
+        <Button Content="How to play!" Height="70" Margin="70,354,70,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="White" Background="#FF4D4D4D" FontSize="24" FontWeight="Bold" FontFamily="Consolas" Click="Button_Click"/>
+        <Button x:Name="upls" Content="Upload skins" Margin="70,597,70,0" BorderBrush="{x:Null}" Foreground="White" Background="#FF4D4D4D" FontSize="24" FontWeight="Bold" FontFamily="Consolas" Click="upl" Height="70" VerticalAlignment="Top"/>
+        <Button x:Name="upls_Copy" Content="Reset acount" Margin="70,522,70,0" BorderBrush="{x:Null}" Foreground="White" Background="#FF4D4D4D" FontSize="24" FontWeight="Bold" FontFamily="Consolas" Click="upl" Height="70" VerticalAlignment="Top"/>
+        <Button x:Name="upls_Copy1" Content="Server Ping" Margin="70,447,70,0" BorderBrush="{x:Null}" Foreground="White" Background="#FF4D4D4D" FontSize="24" FontWeight="Bold" FontFamily="Consolas" Click="upl" Height="70" VerticalAlignment="Top"/>
+        <Label Content="Made by Karlos_12" HorizontalAlignment="Center" Margin="0,828,0,0" Width="240" Background="{x:Null}" Foreground="White" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
