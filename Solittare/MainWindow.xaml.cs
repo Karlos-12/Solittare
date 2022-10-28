@@ -87,7 +87,8 @@ namespace Solittare
 
         private void setngs(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("možná jednou bratře...");
+            Setings setings = new Setings();
+            setings.Show();
         }
     }
 }

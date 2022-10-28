@@ -32,7 +32,9 @@ namespace Solittare
                     {
                         img.Source = new BitmapImage(new Uri((g.line as Onlinemodule).img, UriKind.Absolute));
                         nam.Content = (g.line as Onlinemodule).username;
-                        wins.Content = "Wins: " + (g.line as Onlinemodule).getwins();
+                        wins.Content = "Wined games: " + (g.line as Onlinemodule).getwins();
+                        total.Content = "Total games: " + (g.line as Onlinemodule).gettotal();
+                        timus.Content = "Best time: " + (g.line as Onlinemodule).gettime() + "sec";
                     }
                 }
             }

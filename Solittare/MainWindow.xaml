@@ -78,5 +78,6 @@
             <Image Source="/Resources/Other/seticon.png" Height="70" Width="70" />
 
         </Button>
+        <Label Content="Made by Karlos_12" HorizontalAlignment="Center" Margin="0,408,0,0" Width="240" Background="{x:Null}" Foreground="White" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Top"/>
     </Grid>
 </Window>

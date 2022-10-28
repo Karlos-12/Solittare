@@ -1,0 +1,13 @@
+﻿<Window x:Class="Solittare.Setings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Solittare"
+        mc:Ignorable="d"
+        Title="Setings" Height="900" Width="450" Foreground="{x:Null}" Background="#FF1A1A1A">
+    <Grid>
+        <Label Content="Made by Karlos_12" HorizontalAlignment="Center" Margin="0,0,0,40" Width="240" Background="{x:Null}" Foreground="White" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Window>
