@@ -9,6 +9,81 @@
 
   <ItemGroup>
     <None Remove="1200px-Penrose-dreieck.svg.png" />
+    <None Remove="Resources\Cards\blank.png" />
+    <None Remove="Resources\Cards\empty.png" />
+    <None Remove="Resources\Cards\red\10n.png" />
+    <None Remove="Resources\Cards\red\11n.png" />
+    <None Remove="Resources\Cards\red\12n.png" />
+    <None Remove="Resources\Cards\red\13n.png" />
+    <None Remove="Resources\Cards\red\1n.png" />
+    <None Remove="Resources\Cards\red\2n.png" />
+    <None Remove="Resources\Cards\red\3n.png" />
+    <None Remove="Resources\Cards\red\4n.png" />
+    <None Remove="Resources\Cards\red\5n.png" />
+    <None Remove="Resources\Cards\red\6n.png" />
+    <None Remove="Resources\Cards\red\7n.png" />
+    <None Remove="Resources\Cards\red\8n.png" />
+    <None Remove="Resources\Cards\red\9n.png" />
+    <None Remove="Resources\Other\background.jpg" />
+    <None Remove="Resources\Other\GitHub-Mark-Light-120px-plus.png" />
+    <None Remove="Resources\Other\seticon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Cards\blank.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\empty.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\10n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\11n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\12n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\13n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\1n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\2n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\3n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\4n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\5n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\6n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\7n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\8n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cards\red\9n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Other\background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Other\GitHub-Mark-Light-120px-plus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Other\seticon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -16,7 +91,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="1200px-Penrose-dreieck.svg.png" />
+    <Content Include="1200px-Penrose-dreieck.svg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

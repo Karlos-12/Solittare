@@ -79,8 +79,20 @@ namespace Solittare
             }
 
             client.Set(username + "/played", client.Get(username + "/played").ResultAs<int>() + 1);
-            client.Set(username + "/winstat", ((client.Get(username + "/wins").ResultAs<int>()) / (client.Get(username + "/played").ResultAs<int>() / 100)));
-        
+            try 
+            { 
+                client.Set(username + "/winstat", ((client.Get(username + "/wins").ResultAs<int>()) / (client.Get(username + "/played").ResultAs<int>() / 100)));
+            }
+            catch
+            { }      
+        }
+
+        public void reset()
+        {
+            client.Set(username + "/wins", 0);
+            client.Set(username + "/played", 0);
+            client.Set(username + "/winstat", 0);
+            client.Set(username + "/best_time", 1000);
         }
 
     }

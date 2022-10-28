@@ -87,7 +87,7 @@ namespace Solittare
 
         private void setngs(object sender, RoutedEventArgs e)
         {
-            Setings setings = new Setings();
+            Setings setings = new Setings(log);
             setings.Show();
         }
     }
