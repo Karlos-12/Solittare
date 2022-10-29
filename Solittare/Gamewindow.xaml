@@ -68,7 +68,7 @@
             <RowDefinition Height="263*"/>
             <RowDefinition Height="621*"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="deskoc" Margin="0,0,80,0" Grid.RowSpan="2" MouseMove="Canvas_MouseMove" DragOver="kanec_DragOver">
+        <Grid x:Name="deskoc" Margin="0,0,80,0" Grid.RowSpan="2">
             <Grid.Background>
                 <ImageBrush ImageSource="/Resources/Other/background.jpg" TileMode="FlipX" Opacity="0.9" Stretch="UniformToFill"/>
             </Grid.Background>
@@ -90,6 +90,6 @@
             </Button.Background>
         </Button>
         <Label x:Name="tm" Content="00:00" HorizontalAlignment="Left" Grid.Row="1" Width="358" Height="69" VerticalAlignment="Bottom" FontSize="32" FontFamily="Consolas" FontWeight="Bold" Background="{x:Null}" Foreground="White" VerticalContentAlignment="Bottom"/>
-        <Canvas x:Name="kanec" Grid.RowSpan="2" Margin="0,0,80,0" MouseMove="Canvas_MouseMove" DragOver="kanec_DragOver"/>
+        <Canvas x:Name="kanec" Grid.RowSpan="2" Margin="0,0,80,0" />
     </Grid>
 </Window>
