@@ -201,5 +201,8 @@ namespace Solittare
         {
             main.Lose();
         }
+
+        //more mohlo by se to hebát co si budeme povídat
+        
     }
 }
