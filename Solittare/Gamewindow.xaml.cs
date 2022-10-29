@@ -202,15 +202,35 @@ namespace Solittare
             main.Lose();
         }
 
-        private void Canvas_MouseMove(object sender, MouseEventArgs e)
-        {
-            if()
-            {
+        //private void Canvas_MouseMove(object sender, MouseEventArgs e)
+        ////more mohlo by se to hebát co si budeme povídat
+        //{
+            
+        //}
 
-            }
-        }
+        //private void kanec_DragOver(object sender, DragEventArgs e)
+        //{
+        //    Image im = new Image()
+        //    {
+        //        Width = 150,
+        //        Height = 250,
+        //        Source = new BitmapImage(new Uri("Resources/Cards/blank.png", UriKind.Relative))
+        //    };
 
-        //more mohlo by se to hebát co si budeme povídat
 
+        //    kanec.Children.Clear();
+        //    if (main.lastpicked != null)
+        //    {
+        //        if (main.lastpicked.cards.Count() != 0)
+        //        {
+        //            kanec.Children.Add(im);
+        //            Point GetMousePos() => Mouse.GetPosition(deskoc);
+        //            var p = GetMousePos();
+
+        //            Canvas.SetTop(im, p.Y);
+        //            Canvas.SetLeft(im, p.X);
+        //        }
+        //    }
+        //}
     }
 }

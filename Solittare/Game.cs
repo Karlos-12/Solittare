@@ -130,7 +130,7 @@ namespace Solittare
             return true;         
         }
 
-        Stack lastpicked;
+        public Stack lastpicked;
         public List<Card> picked = new List<Card>();
 
         public bool move(Stack target)
