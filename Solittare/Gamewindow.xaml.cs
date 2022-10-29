@@ -202,7 +202,15 @@ namespace Solittare
             main.Lose();
         }
 
+        private void Canvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            if()
+            {
+
+            }
+        }
+
         //more mohlo by se to hebát co si budeme povídat
-        
+
     }
 }
