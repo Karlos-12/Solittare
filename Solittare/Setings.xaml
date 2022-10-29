@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Solittare"
         mc:Ignorable="d"
-        Title="Setings" Height="900" Width="450" Foreground="{x:Null}" Background="#FF1A1A1A">
+        Title="Setings" Height="936" Width="450" Foreground="{x:Null}" Background="#FF1A1A1A" Icon="/Resources/Other/seticon.png">
     <Grid Height="884" VerticalAlignment="Center" Margin="0,0,-21,0">
         <Label Content="Made by Karlos_12" HorizontalAlignment="Center" Margin="0,0,0,30" Width="240" Background="{x:Null}" Foreground="White" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Bottom"/>
         <Rectangle HorizontalAlignment="Center" Height="402" Margin="0,40,0,0" VerticalAlignment="Top" Width="358" Fill="#FF2E2E2E"/>

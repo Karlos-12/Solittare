@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Solittare"
         mc:Ignorable="d"
-        Title="Pause Menu" Height="450" Width="800" Icon="/1200px-Penrose-dreieck.svg.png" Background="#FF2E2E2E" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown" Closed="Window_Closed">
+        Title="Pause Menu" Height="450" Width="800" Icon="/Resources/1200px-Penrose-dreieck.svg.png" Background="#FF2E2E2E" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown" Closed="Window_Closed">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -74,7 +74,7 @@
             <Button Style="{DynamicResource ButtonStyle1}" x:Name="newg" Content="New game" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="ng" Margin="0,110,0,0"/>
             <Button Style="{DynamicResource ButtonStyle1}" x:Name="resum" Content="Resume" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="play_Click"/>
         </Grid>
-        <Image x:Name="img" Grid.Column="1" Height="240" Margin="70,10,70,0" VerticalAlignment="Top" Source="/1200px-Penrose-dreieck.svg.png"/>
+        <Image x:Name="img" Grid.Column="1" Height="240" Margin="70,10,70,0" VerticalAlignment="Top" Source="/Resources/1200px-Penrose-dreieck.svg.png"/>
         <Label x:Name="nam" Grid.Column="1" Content="Name" Margin="60,0,60,132" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Consolas" FontSize="24" HorizontalContentAlignment="Center" Height="38" VerticalAlignment="Bottom"/>
         <Label x:Name="wins" Grid.Column="1" Content="Wined games: 0" Margin="60,0,60,89" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Consolas" FontSize="24" Height="38" VerticalAlignment="Bottom"/>
         <Label Content="Made by Karlos_12" HorizontalAlignment="Left" Margin="280,0,0,0" Width="240" Background="{x:Null}" Foreground="White" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>

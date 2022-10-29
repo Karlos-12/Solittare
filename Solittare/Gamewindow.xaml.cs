@@ -161,6 +161,12 @@ namespace Solittare
 
                 Paint();
             }
+
+            if (main.pack.cards.Count == 0)
+            {
+                deal.IsEnabled = false;
+                Paint();
+            }
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)

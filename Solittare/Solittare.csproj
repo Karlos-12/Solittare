@@ -93,7 +93,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="1200px-Penrose-dreieck.svg.png">
+    <Content Include="Resources\1200px-Penrose-dreieck.svg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
