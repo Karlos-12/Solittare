@@ -12,12 +12,13 @@ namespace Solittare
     internal class Game
     {
         public Stack[] board = new Stack[9];
-
         public Stack pack = new Stack();
 
-        Onlinemodule onlines;
-
+        public int moves = 0;
         public int time = 0;
+        public int deals = 13;
+
+        Onlinemodule onlines;    
 
         DispatcherTimer timer = new DispatcherTimer();
         //focus ne focus sto start času
@@ -91,8 +92,9 @@ namespace Solittare
                     if (nonfirst == true)
                     {
                         check();
-                    }
+                    }                   
                 }
+                deals--;
             }
             else
             {
@@ -143,6 +145,7 @@ namespace Solittare
 
                 picked.Clear();
                 check();
+                moves++;
                 return true;
             }
             else if (picked[picked.Count - 1].id +1 == target.cards[0].id)
@@ -152,6 +155,7 @@ namespace Solittare
 
                 picked.Clear();
                 check();
+                moves++;
                 return true;
             }
             else

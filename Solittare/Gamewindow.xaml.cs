@@ -49,8 +49,10 @@ namespace Solittare
         public void Paint()
         {
             deskoc.Children.Clear();
+            mv.Content = "Moves: " + main.moves;
+            rm.Content = "Deals: " + main.deals;
 
-            for( int i = main.board.Count(); i > 0; i--)
+            for ( int i = main.board.Count(); i > 0; i--)
             {
                 Image img = new Image();
 
@@ -145,8 +147,7 @@ namespace Solittare
 
             Paint();
         }
-
-        int r = 10;
+    
         private void deal_Click(object sender, RoutedEventArgs e)
         {
             player.Open(new Uri("Resources/SFX/shuffle.wav", UriKind.Relative));
@@ -168,8 +169,7 @@ namespace Solittare
                 deal.IsEnabled = false;
                 Paint();
             }
-            r--;
-            rm.Content = "Deals: " + r;
+            
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
