@@ -69,10 +69,12 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="1" Margin="0,10,0,13" HorizontalAlignment="Center" Width="280" Fill="#FF2E2E2E"/>
-        <Grid HorizontalAlignment="Center" Margin="0,54,0,30" Width="280">
-            <Button Style="{DynamicResource ButtonStyle1}" x:Name="qut" Content="Quit" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Margin="0,222,0,0" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="qt"/>
-            <Button Style="{DynamicResource ButtonStyle1}" x:Name="newg" Content="New game" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="ng" Margin="0,110,0,0"/>
+        <Grid HorizontalAlignment="Center" Margin="0,18,0,20" Width="280">
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="qut" Content="Quit" Height="65"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Margin="0,331,0,0" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="qt"/>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="newg" Content="New game" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="ng" Margin="0,108,0,0"/>
             <Button Style="{DynamicResource ButtonStyle1}" x:Name="resum" Content="Resume" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="play_Click"/>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="sv" Content="Save" Height="90"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Margin="0,215,0,0" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="sav" VerticalContentAlignment="Top"/>
+            <TextBox x:Name="st" Height="65" Margin="0,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" SelectionBrush="#FF33007F" SelectionTextBrush="White" FontSize="20" FontFamily="Consolas" TextDecorations="Underline" Text="Your SSS code will be here"/>
         </Grid>
         <Image x:Name="img" Grid.Column="1" Height="240" Margin="70,10,70,0" VerticalAlignment="Top" Source="/Resources/1200px-Penrose-dreieck.svg.png"/>
         <Label x:Name="nam" Grid.Column="1" Content="Name" Margin="60,0,60,132" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontFamily="Consolas" FontSize="24" HorizontalContentAlignment="Center" Height="38" VerticalAlignment="Bottom"/>

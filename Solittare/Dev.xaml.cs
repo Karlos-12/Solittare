@@ -47,5 +47,16 @@ namespace Solittare
         {
             (main.line as Onlinemodule).newacount("lol", "123");
         }
+
+        private void ggg(object sender, RoutedEventArgs e)
+        {
+            game.pack.cards = new List<Card>();
+            foreach(Stack card in game.board)
+            {
+                card.cards = new List<Card>();
+            }
+
+            game.load(t.Text);
+        }
     }
 }

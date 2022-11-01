@@ -65,7 +65,7 @@
     </Window.Resources>
     <Grid>
         <Button Style="{DynamicResource ButtonStyle1}" x:Name="play" Content="Play" Height="90"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="340" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Margin="0,74,0,0" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="play_Click"/>
-        <Button Style="{DynamicResource ButtonStyle1}" x:Name="csloses" Content="Quit" Height="90"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="340" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Margin="0,183,0,0" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="cslose"/>
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="csloses" Content="Quit" Height="90"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="340" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Margin="0,267,0,0" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="cslose"/>
         <Expander x:Name="exp" Header="Acount" ExpandDirection="Up" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" FontSize="24" FontWeight="Bold" FontFamily="Consolas" Height="360" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="253">
             <Grid Background="#FF353535">
                 <TextBox x:Name="nambox" Tag="Username" Margin="0,168,0,0" TextWrapping="Wrap" Text="Username" Height="38" VerticalAlignment="Top" HorizontalAlignment="Center" Width="231" SelectionBrush="#FF290067" BorderBrush="{x:Null}" Background="#FF2E2E2E" VerticalContentAlignment="Center" FontSize="20" FontFamily="Consolas" Foreground="White" LostFocus="lf" GotFocus="gf"/>
@@ -80,5 +80,6 @@
 
         </Button>
         <Label Content="Made by Karlos_12" HorizontalAlignment="Center" Margin="0,408,0,0" Width="240" Background="{x:Null}" Foreground="White" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Top"/>
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="load" Content="Load" Height="90"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="340" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="load_click"/>
     </Grid>
 </Window>

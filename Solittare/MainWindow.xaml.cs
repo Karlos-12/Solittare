@@ -96,5 +96,16 @@ namespace Solittare
             regwindow regwindow = new regwindow(this);
             regwindow.Show();
         }
+
+        private void load_click(object sender, RoutedEventArgs e)
+        {
+            string x = Microsoft.VisualBasic.Interaction.InputBox("Input your SSS code:", "Save load", "");
+            if(x != null || x != "")
+            {
+                GameWindow window = new GameWindow(log, true, x);
+                window.Show();
+                Close();
+            }
+        }
     }
 }

@@ -27,7 +27,7 @@ namespace Solittare
             onlines = m;
         }
 
-        public Game()
+        public Game(bool loadis = false, string s = null)
         {
             pack = new Stack(true);
             for (int i = 9; i > 0; i--)
@@ -35,10 +35,18 @@ namespace Solittare
                 board[i - 1] = new Stack();
             }
 
-            deal(false);
-            //nebude    
-            deal(false);
-            deal(false);
+            if (loadis == false && s == null)
+            {
+                deal(false);
+                deal(false);
+                deal(false);
+            }
+            else
+            {
+                load(s);
+            }
+
+
             check();
 
             timer.Interval = new TimeSpan(0,0,1);
@@ -255,6 +263,57 @@ namespace Solittare
                 onlines.gamewrite(false, time);
             }
         }
+
+        public string save()
+        {
+            string sss = "";
+            foreach(Stack s in board)
+            {
+                foreach(Card c in s.cards)
+                {
+                    sss += c.id;
+                }
+                sss += "/";
+            }
+            if(pack.cards.Count != 0)
+            {
+                foreach(Card sc in pack.cards)
+                {
+                    sss += sc.id;
+                }
+            }
+
+            return sss;
+        }
+
+        public void load(string csss)
+        {
+            int stc = 0;
+            for (int i = 0; i < csss.Length; i++)
+            {
+                char c = csss[i];
+                
+                
+                if(c == char.Parse("/"))
+                {
+                    stc++;                  
+                }
+                else if (stc == 9)
+                {
+                    string idk = csss.Substring(i);
+                    for (int z = 0; z < idk.Length; z++)
+                    {
+                        char d = idk[z];
+                        pack.cards.Add(new Card(int.Parse(z.ToString())));
+                    }
+                }
+                else
+                {
+                    board[stc].cards.Add(new Card(int.Parse(c.ToString())));
+                }
+            }
+        }
+
     }
     
 }

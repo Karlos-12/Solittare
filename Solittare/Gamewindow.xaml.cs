@@ -46,6 +46,18 @@ namespace Solittare
             setupdis();
         }
 
+        public GameWindow(object o, bool sc, string s)
+        {
+            InitializeComponent();
+            main = new Game(sc, s);
+            poss = main;
+            Paint();
+            online = o as Onlinemodule;
+            line = online;
+            main.online(online);
+            setupdis();
+        }
+
         public void Paint()
         {
             deskoc.Children.Clear();

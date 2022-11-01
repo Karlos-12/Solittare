@@ -10,6 +10,8 @@
         <Button x:Name="cl" Content="Clear all" HorizontalAlignment="Left" Height="60" Margin="45,65,0,0" VerticalAlignment="Top" Width="102" Click="cl_Click"/>
         <Button x:Name="cl_Copy" Content="Add win" HorizontalAlignment="Left" Height="60" Margin="243,108,0,0" VerticalAlignment="Top" Width="102" Click="addwin"/>
         <Button x:Name="upl" Content="Upload image" HorizontalAlignment="Left" Height="60" Margin="372,0,0,0" VerticalAlignment="Center" Width="102" Click="upload"/>
+        <Button x:Name="ld" Content="Loaf" HorizontalAlignment="Left" Height="60" Margin="282,274,0,0" VerticalAlignment="Top" Width="102" Click="ggg"/>
+        <TextBox x:Name="t" HorizontalAlignment="Left" Height="40" Margin="400,294,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="74"/>
 
     </Grid>
 </Window>

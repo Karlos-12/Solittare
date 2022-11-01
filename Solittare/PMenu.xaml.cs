@@ -75,5 +75,10 @@ namespace Solittare
         {
             (gameWindow.poss as Game).timechange();
         }
+
+        private void sav(object sender, RoutedEventArgs e)
+        {
+            st.Text = (gameWindow.poss as Game).save();
+        }
     }
 }
