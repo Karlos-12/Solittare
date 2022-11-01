@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Firebase.Auth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,10 +23,14 @@ namespace Solittare
     public partial class MainWindow : Window
     {
         Onlinemodule log;
-        public MainWindow(string usr = "", string psw = "")
+        public MainWindow()
         {
-            InitializeComponent();
-            if(usr != "" && psw != "")
+            InitializeComponent();        
+        }
+
+        public void pasedata(string usr = "", string psw = "")
+        {
+            if (usr != "" && psw != "")
             {
                 var xd = new Onlinemodule(usr, psw);
                 if (xd.logged == true)
@@ -100,7 +105,7 @@ namespace Solittare
             setings.Show();
         }
 
-        private async void rege(object sender, RoutedEventArgs e)
+        private void rege(object sender, RoutedEventArgs e)
         {
             regwindow regwindow = new regwindow(this);
             regwindow.Show();
@@ -139,9 +144,9 @@ namespace Solittare
             loadec.Visibility = Visibility.Visible;
         }
 
-        private async void serevrload(object sender, RoutedEventArgs e)
+        private void serevrload(object sender, RoutedEventArgs e)
         {
-            string a = await log.loadfromserver();
+            string a = log.loadfromserver();
             GameWindow game = new GameWindow(log, true, a);
             game.Show();
             Close();

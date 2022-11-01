@@ -51,7 +51,8 @@ namespace Solittare
         private void ng(object sender, RoutedEventArgs e)
         {
             gameWindow.Close();
-            MainWindow m = new MainWindow((gameWindow.line as Onlinemodule).username, (gameWindow.line as Onlinemodule).password);
+            MainWindow m = new MainWindow();
+            m.pasedata((gameWindow.line as Onlinemodule).username, (gameWindow.line as Onlinemodule).password);
             m.Show();
             m.login(sender, e);
             Close();

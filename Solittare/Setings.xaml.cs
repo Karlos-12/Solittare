@@ -74,7 +74,7 @@ namespace Solittare
             client = new FirebaseClient(config);
             try
             {
-                client.Get("admin/wins");
+                await client.GetAsync("admin/wins");
                 Thread.Sleep(1000);
                 MessageBox.Show("The ping was sucseful!");
             }

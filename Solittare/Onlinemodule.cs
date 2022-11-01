@@ -142,12 +142,12 @@ namespace Solittare
             client.Set(name + "/winstat", 100);
         }
 
-        public async void saveonserver(string sv)
+        public void saveonserver(string sv)
         {
             client.Set(username + "/save0", sv);          
         }
 
-        public async Task<string> loadfromserver()
+        public string loadfromserver()
         {
             return client.Get(username + "/save0").ResultAs<string>();
         }
