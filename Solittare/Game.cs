@@ -271,7 +271,12 @@ namespace Solittare
             {
                 foreach(Card c in s.cards)
                 {
-                    sss += c.id;
+                    sss += jqk(c.id);
+
+                    if (c.isHiden == false)
+                    {
+                        sss += "v";
+                    }                  
                 }
                 sss += "/";
             }
@@ -279,7 +284,7 @@ namespace Solittare
             {
                 foreach(Card sc in pack.cards)
                 {
-                    sss += sc.id;
+                    sss += jqk(sc.id);
                 }
             }
 
@@ -292,8 +297,7 @@ namespace Solittare
             for (int i = 0; i < csss.Length; i++)
             {
                 char c = csss[i];
-                
-                
+                               
                 if(c == char.Parse("/"))
                 {
                     stc++;                  
@@ -303,15 +307,83 @@ namespace Solittare
                     string idk = csss.Substring(i);
                     for (int z = 0; z < idk.Length; z++)
                     {
-                        char d = idk[z];
-                        pack.cards.Add(new Card(int.Parse(z.ToString())));
+                        int d = (int)(jqk(idk[z].ToString()));
+                        pack.cards.Add(new Card(d));
                     }
                 }
                 else
                 {
-                    board[stc].cards.Add(new Card(int.Parse(c.ToString())));
+                    if (csss[i + 1] == char.Parse("v"))
+                    {
+                        string x = (((int) jqk(c.ToString())).ToString());
+                        board[stc].cards.Add(new Card(int.Parse(x.ToString()), false));
+                        i++;
+                    }
+                    else
+                    {
+                        string x = (((int)jqk(c.ToString())).ToString());
+                        board[stc].cards.Add(new Card(int.Parse(x.ToString())));
+                    }
                 }
             }
+        }
+
+        private object jqk(int d = 0)
+        {
+            if(d >= 10)
+            {
+                if(d == 10)
+                {
+                    return "t";
+                }
+                if(d == 11)
+                {
+                    return "j";
+                }
+                if(d == 12)
+                {
+                    return "q";
+                }
+                if(d == 13)
+                {
+                    return "k";
+                }
+            }
+            if(d < 10)
+            {
+                return d;
+            }
+
+            return null;
+        }
+
+        private object jqk(string c = "f")
+        {
+            if (char.IsNumber(c[0]))
+            {
+                return int.Parse(c);
+            }
+            else
+            {
+                if(c == "t")
+                {
+                    return 10;
+                }
+                if (c == "j")
+                {
+                    return 11;
+                }
+                if (c == "q")
+                {
+                    return 12;
+                }
+                if (c == "k")
+                {
+                    return 13;
+                }
+            }
+
+            return null;
         }
 
     }
