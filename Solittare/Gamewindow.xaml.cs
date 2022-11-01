@@ -21,11 +21,13 @@ namespace Solittare
     /// </summary>
     public partial class GameWindow : Window
     {
+        MediaPlayer player = new MediaPlayer();
         Game main = new Game();
         Onlinemodule online;
+        Cleverguy brain;
+
         public object line;
         public object poss;
-        MediaPlayer player = new MediaPlayer();
 
         public GameWindow()
         {
@@ -33,6 +35,7 @@ namespace Solittare
             poss = main;
             Paint();
             setupdis();
+            brain = new Cleverguy(main);
         }
 
         public GameWindow(object o)
@@ -44,6 +47,7 @@ namespace Solittare
             line = online;
             main.online(online);
             setupdis();
+            brain = new Cleverguy(main);
         }
 
         public GameWindow(object o, bool sc, string s)
@@ -56,6 +60,7 @@ namespace Solittare
             line = online;
             main.online(online);
             setupdis();
+            brain = new Cleverguy(main);
         }
 
         public void Paint()
@@ -196,6 +201,10 @@ namespace Solittare
                 PMenu m = new PMenu(this);
                 m.Show();
             }
+            if(e.Key == Key.H)
+            {
+                rdrefersh();
+            }
         }
 
         private void tmchng(object sender, EventArgs e)
@@ -217,56 +226,10 @@ namespace Solittare
             main.Lose();
         }
 
-        //private void Canvas_MouseMove(object sender, MouseEventArgs e)
-        ////more mohlo by se to hebát co si budeme povídat
-        //{
+        public void rdrefersh()
+        {          
+            rd.Content = brain.gethelpline();
+        }
 
-        //    Image im = new Image()
-        //    {
-        //        Width = 150,
-        //        Height = 250,
-        //        Source = new BitmapImage(new Uri("Resources/Cards/blank.png", UriKind.Relative))
-        //    };
-
-
-        //    kanec.Children.Clear();
-        //    if (main.lastpicked != null)
-        //    {
-        //        if (main.lastpicked.cards.Count() != 0)
-        //        {
-        //            kanec.Children.Add(im);
-        //            Point GetMousePos() => Mouse.GetPosition(deskoc);
-        //            var p = GetMousePos();
-
-        //            Canvas.SetTop(im, p.Y);
-        //            Canvas.SetLeft(im, p.X);
-        //        }
-        //    }
-        //}
-
-        //private void kanec_DragOver(object sender, DragEventArgs e)
-        //{
-        //    Image im = new Image()
-        //    {
-        //        Width = 150,
-        //        Height = 250,
-        //        Source = new BitmapImage(new Uri("Resources/Cards/blank.png", UriKind.Relative))
-        //    };
-
-
-        //    kanec.Children.Clear();
-        //    if (main.lastpicked != null)
-        //    {
-        //        if (main.lastpicked.cards.Count() != 0)
-        //        {
-        //            kanec.Children.Add(im);
-        //            Point GetMousePos() => Mouse.GetPosition(deskoc);
-        //            var p = GetMousePos();
-
-        //            Canvas.SetTop(im, p.Y);
-        //            Canvas.SetLeft(im, p.X);
-        //        }
-        //    }
-        //}
     }
 }
