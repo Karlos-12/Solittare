@@ -80,6 +80,14 @@
 
         </Button>
         <Label Content="Made by Karlos_12" HorizontalAlignment="Center" Margin="0,408,0,0" Width="240" Background="{x:Null}" Foreground="White" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Top"/>
-        <Button Style="{DynamicResource ButtonStyle1}" x:Name="load" Content="Load" Height="90"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="340" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="load_click"/>
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="load" Content="Load" Height="90"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="340" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="laddialogopne" Margin="0,172,0,0"/>
+        <Grid x:Name="loadec" HorizontalAlignment="Center" Height="319" Margin="0,38,0,0" VerticalAlignment="Top" Width="614" Background="#FF2E2E2E" Visibility="Hidden">
+            <Border BorderBrush="#FF24005A" BorderThickness="0,0,5,5">
+                <TextBox x:Name="lcloadinpt" HorizontalAlignment="Left" Height="34" Margin="142,249,0,0" TextWrapping="Wrap" Text="SSS here..." VerticalAlignment="Top" Width="330" BorderBrush="{x:Null}" Background="#FF4D4D4D" SelectionBrush="#FF35268A" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            </Border>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="srvr_load" Content="From acount" Height="90"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="340" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="serevrload" Margin="0,30,0,0"/>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="lclload" Content="From SSS" Height="90"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="340" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="load_click" Margin="0,160,0,0"/>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="cls" Content="X" Height="45"  VerticalAlignment="Top" BorderBrush="#FF290067" Background="#FF4D4D4D" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Padding="1,1,1,1" BorderThickness="0,1,5,5" Click="clsload" Margin="0,10,10,0" HorizontalAlignment="Right" Width="45"/>
+        </Grid>
     </Grid>
 </Window>

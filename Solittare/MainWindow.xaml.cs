@@ -22,9 +22,18 @@ namespace Solittare
     public partial class MainWindow : Window
     {
         Onlinemodule log;
-        public MainWindow()
+        public MainWindow(string usr = "", string psw = "")
         {
             InitializeComponent();
+            if(usr != "" && psw != "")
+            {
+                var xd = new Onlinemodule(usr, psw);
+                if (xd.logged == true)
+                {
+                    log = xd;
+                    img.Source = new BitmapImage(new Uri(log.img, UriKind.Absolute));
+                }
+            }
         }
 
         private void play_Click(object sender, RoutedEventArgs e)
@@ -98,14 +107,49 @@ namespace Solittare
         }
 
         private void load_click(object sender, RoutedEventArgs e)
-        {
-            string x = Microsoft.VisualBasic.Interaction.InputBox("Input your SSS code:", "Save load", "");
-            if(x != null || x != "")
+        {            
+            if(lcloadinpt.Text != null || lcloadinpt.Text != "")
             {
-                GameWindow window = new GameWindow(log, true, x);
+                GameWindow window = new GameWindow(log, true, lcloadinpt.Text);
                 window.Show();
                 Close();
             }
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox txt = sender as TextBox;    
+            if(txt.Text == "SSS here...")
+            {
+                txt.Text = "";
+            }
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            if(txt.Text == "")
+            {
+                txt.Text = "SSS here...";
+            }
+        }
+
+        private void laddialogopne(object sender, RoutedEventArgs e)
+        {
+            loadec.Visibility = Visibility.Visible;
+        }
+
+        private async void serevrload(object sender, RoutedEventArgs e)
+        {
+            string a = await log.loadfromserver();
+            GameWindow game = new GameWindow(log, true, a);
+            game.Show();
+            Close();
+        }
+
+        private void clsload(object sender, RoutedEventArgs e)
+        {
+            loadec.Visibility = Visibility.Hidden;
         }
     }
 }

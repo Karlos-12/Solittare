@@ -51,7 +51,7 @@ namespace Solittare
         private void ng(object sender, RoutedEventArgs e)
         {
             gameWindow.Close();
-            MainWindow m = new MainWindow();
+            MainWindow m = new MainWindow((gameWindow.line as Onlinemodule).username, (gameWindow.line as Onlinemodule).password);
             m.Show();
             m.login(sender, e);
             Close();
@@ -79,6 +79,15 @@ namespace Solittare
         private void sav(object sender, RoutedEventArgs e)
         {
             st.Text = (gameWindow.poss as Game).save();
+            try
+            {
+                (gameWindow.line as Onlinemodule).saveonserver((gameWindow.poss as Game).save());
+                MessageBox.Show("Save was sucsefully snyced!");
+            }
+            catch
+            {
+                MessageBox.Show("Save was not synced!");
+            }
         }
     }
 }

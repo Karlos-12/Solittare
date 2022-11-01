@@ -12,6 +12,7 @@ using FireSharp.Interfaces;
 using Firebase.Auth;
 using System.Net.Sockets;
 using System.Threading;
+using System.Windows.Media.Animation;
 
 namespace Solittare
 {
@@ -141,6 +142,14 @@ namespace Solittare
             client.Set(name + "/winstat", 100);
         }
 
-        // save na cloudu budou chlapče
+        public async void saveonserver(string sv)
+        {
+            client.Set(username + "/save0", sv);          
+        }
+
+        public async Task<string> loadfromserver()
+        {
+            return client.Get(username + "/save0").ResultAs<string>();
+        }
     }
 }
