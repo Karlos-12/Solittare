@@ -140,5 +140,7 @@ namespace Solittare
             client.Set(name + "/wins", 0);
             client.Set(name + "/winstat", 100);
         }
+
+        // save na cloudu budou chlapče
     }
 }
