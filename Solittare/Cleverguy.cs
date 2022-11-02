@@ -10,8 +10,6 @@ namespace Solittare
     {
         public Game game { get; internal set; }
 
-        List<List<Card>> candidates = new List<List<Card>>();
-
         public Cleverguy(Game g)
         {
             game = g;
@@ -19,8 +17,10 @@ namespace Solittare
 
         public string gethelpline()
         {
-            candidates.Clear();
+            List<List<Card>> candidates = new List<List<Card>>();
 
+            bool hole = false;
+            int holecrdnt = 0;
             string output = "";
 
             foreach(Stack  s1 in game.board)
@@ -53,50 +53,60 @@ namespace Solittare
                 }
                 else
                 {
-                    return "You fill the holes first";
+                    hole = true;
+                    holecrdnt = Array.IndexOf(game.board, s1);
                 }
             }
 
-            List<string> ideas = new List<string>();
-            List<Card> firsts = new List<Card>();
-
-            foreach (List<Card> cl2 in candidates)
+            if (hole == true)
             {
-                firsts.Add(cl2[0]);
-            }
+                candidates.Insert(holecrdnt, new List<Card>() { new Card(0)});
+                var stack = candidates.MaxBy(x => x[x.Count -1].id);
 
-            foreach (List<Card> cl3 in candidates)
-            {
-                Card tstc = cl3[cl3.Count - 1];
-
-                foreach(Card c3 in firsts)
-                {
-                    if(c3.id -1 == tstc.id)
-                    {
-                        int stindx = candidates.IndexOf(cl3) +1;
-                        int cardindx = cl3.IndexOf(tstc) +1;
-                        int trgindx = firsts.IndexOf(c3) +1;
-                        ideas.Add("From: [" + stindx + ";" + cardindx + "] To stack:" + trgindx);
-                    }
-                }
-            }
-
-            if (ideas.Count != 0)
-            {
-                Random random = new Random();
-                output = ideas[random.Next(0, ideas.Count)];
-                return output;
+                return "From: [" + (candidates.IndexOf(stack) +1) + ";" + stack.Count + "] to stack:" + (holecrdnt +1);
             }
             else
             {
-                if(game.pack.cards.Count != 0)
+                List<string> ideas = new List<string>();
+                List<Card> firsts = new List<Card>();
+
+                foreach (List<Card> cl2 in candidates)
                 {
-                    return "Please deal a new batch";
+                    firsts.Add(cl2[0]);
+                }
+
+                foreach (List<Card> cl3 in candidates)
+                {
+                    Card tstc = cl3[cl3.Count - 1];
+
+                    foreach (Card c3 in firsts)
+                    {
+                        if (c3.id - 1 == tstc.id)
+                        {
+                            int stindx = candidates.IndexOf(cl3) + 1;
+                            int cardindx = cl3.IndexOf(tstc) + 1;
+                            int trgindx = firsts.IndexOf(c3) + 1;
+                            ideas.Add("From: [" + stindx + ";" + cardindx + "] To stack:" + trgindx);
+                        }
+                    }
+                }
+
+                if (ideas.Count != 0)
+                {
+                    output = ideas[0];
+                    return output;
                 }
                 else
                 {
-                    return "No tips avalibe";
-                }        
+                    if (game.pack.cards.Count != 0)
+                    {
+                        return "Please deal a new batch";
+                    }
+                    else
+                    {
+                        return "No tips avalibe";
+                    }
+                }
             }
         }
     }

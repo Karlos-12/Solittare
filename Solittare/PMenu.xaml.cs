@@ -52,7 +52,12 @@ namespace Solittare
         {
             gameWindow.Close();
             MainWindow m = new MainWindow();
-            m.pasedata((gameWindow.line as Onlinemodule).username, (gameWindow.line as Onlinemodule).password);
+            try
+            {
+                m.pasedata((gameWindow.line as Onlinemodule).username, (gameWindow.line as Onlinemodule).password);
+            }
+            catch
+            { }
             m.Show();
             m.login(sender, e);
             Close();
