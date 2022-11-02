@@ -103,21 +103,16 @@ namespace Solittare
 
         public async void newacount(string name, string passw, string imuges = @"D:\testfolder\1200px-Penrose-dreieck.svg.png")
         {
+            var auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig("AIzaSyCETk5LvYzOqb2yfVmTsq3K6O2cHOnSeYE"));
+            var a = await auth.SignInWithEmailAndPasswordAsync("admi@more.com", "123456");
+
             FileStream stream = null;
             try
             {
                 stream = File.Open(imuges, FileMode.Open);
-            }
-            catch
-            {
-                MessageBox.Show("The file is unaccesable");
-            }
 
-            var auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig("AIzaSyCETk5LvYzOqb2yfVmTsq3K6O2cHOnSeYE"));
-            var a = await auth.SignInWithEmailAndPasswordAsync("admi@more.com", "123456");
+                string pic = "";
 
-            string pic = "";
-            
                 var task = new FirebaseStorage(
                     "solitare-56915.appspot.com",
                     new FirebaseStorageOptions
@@ -129,12 +124,18 @@ namespace Solittare
                     .PutAsync(stream);
 
                 pic = await task;
-            
+
+                client.Set(name + "/img", pic);
+            }
+            catch
+            {
+                MessageBox.Show("The file is unaccesable");
+            }           
+                      
 
             client.Set(name + "/name", name);
             client.Set(name + "/pass", passw);
 
-            client.Set(name + "/img", pic);
 
             client.Set(name + "/best_time", 1000);
             client.Set(name + "/played", 0);
