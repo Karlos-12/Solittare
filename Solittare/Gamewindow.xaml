@@ -91,7 +91,7 @@
         </Button>
         <Canvas x:Name="kanec" Grid.RowSpan="2" Margin="0,0,80,0" />
         <Label x:Name="rd" Content="" FontSize="32" FontFamily="Consolas" FontWeight="Bold" Background="{x:Null}" Foreground="White" Margin="0,522,215,30" HorizontalAlignment="Right" Width="785" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label x:Name="rd_Copy" Content="Press H for tips" FontSize="24" FontFamily="Consolas" FontWeight="Bold" Background="{x:Null}" Foreground="White" Margin="0,548,215,3" HorizontalAlignment="Right" Width="785" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="rd_Copy" Content="Press H for tips" FontSize="24" FontFamily="Consolas" FontWeight="Bold" Background="{x:Null}" Foreground="White" Margin="0,548,215,3" HorizontalAlignment="Right" Width="785" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" MouseDown="rd_Copy_MouseDown"/>
         <Grid HorizontalAlignment="Left" Margin="0,561,0,0" Grid.Row="1" Width="600">
             <Label x:Name="tm" Content="00:00" HorizontalAlignment="Left" Width="134" FontSize="32" FontFamily="Consolas" FontWeight="Bold" Background="{x:Null}" Foreground="White" VerticalContentAlignment="Bottom" Margin="0,-9,0,0"/>
             <Label x:Name="rm" Content="Deals: 10" FontSize="32" FontFamily="Consolas" FontWeight="Bold" Background="{x:Null}" Foreground="White" VerticalContentAlignment="Bottom" Margin="0,-9,0,0" HorizontalAlignment="Right" Width="202"/>

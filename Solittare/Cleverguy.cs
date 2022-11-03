@@ -61,6 +61,15 @@ namespace Solittare
             if (hole == true)
             {
                 candidates.Insert(holecrdnt, new List<Card>() { new Card(0)});
+                foreach(List<Card> l in candidates)
+                {
+                    if(game.board[candidates.IndexOf(l)].cards.IndexOf(l[l.Count - 1]) == game.board[candidates.IndexOf(l)].cards.Count-1)
+                    {
+                        candidates[candidates.IndexOf(l)][0] = new Card(0);
+                        candidates[candidates.IndexOf(l)].RemoveAll(x => x.id !=0);
+                        
+                    }
+                }
                 var stack = candidates.MaxBy(x => x[x.Count -1].id);
 
                 return "From: [" + (candidates.IndexOf(stack) +1) + ";" + stack.Count + "] to stack:" + (holecrdnt +1);

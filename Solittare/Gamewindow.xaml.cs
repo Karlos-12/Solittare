@@ -231,5 +231,9 @@ namespace Solittare
             rd.Content = brain.gethelpline();
         }
 
+        private void rd_Copy_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            rdrefersh();
+        }
     }
 }
