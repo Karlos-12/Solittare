@@ -32,12 +32,9 @@ namespace Solittare
         {
             if (usr != "" && psw != "")
             {
-                var xd = new Onlinemodule(usr, psw);
-                if (xd.logged == true)
-                {
-                    log = xd;
-                    img.Source = new BitmapImage(new Uri(log.img, UriKind.Absolute));
-                }
+                nambox.Text = usr;
+                passbox.Text = psw;
+                login(null, new RoutedEventArgs());
             }
         }
 
