@@ -122,6 +122,7 @@ namespace Solittare
                     })
                     .Child(name + ".png")
                     .PutAsync(stream);
+                stream.Close();
 
                 pic = await task;
 
